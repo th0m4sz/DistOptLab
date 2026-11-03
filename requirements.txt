@@ -1,0 +1,5 @@
+nicegui==3.17.1
+paramiko==5.0.0
+plotly==7.1.0
+latex2mathml==3.81.1
+matplotlib==3.10.8

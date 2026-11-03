@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "algorithm": "consenso_robusto",
+  "plugin_sha256": "49b4a0a280fc73dfaf99002dc01b5a1b5dd6963c7ff19933184f06d3a7c78733",
+  "name": "Consenso robusto · seguimiento de referencias · 4 agentes",
+  "steps": 2000,
+  "period_s": 0.0,
+  "parameters": {
+    "h": 0.02,
+    "reference_step": 1000,
+    "kick_step": 400
+  },
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "topology": "anillo",
+  "execution_mode": "sync",
+  "execution_target": "local",
+  "source": "Ejemplo público incluido con la plataforma.",
+  "nodes": [
+    {
+      "id": 1,
+      "params": {
+        "r": 1,
+        "r_after": 2,
+        "x0": 1.0,
+        "lambda0": 0,
+        "kick": 5.0
+      },
+      "host": "127.0.0.1",
+      "port": 15001
+    },
+    {
+      "id": 2,
+      "params": {
+        "r": 4.0,
+        "r_after": 2,
+        "x0": 2.0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15002
+    },
+    {
+      "id": 3,
+      "params": {
+        "r": 9.0,
+        "r_after": 2,
+        "x0": 3.0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15003
+    },
+    {
+      "id": 4,
+      "params": {
+        "r": 16.0,
+        "r_after": 2,
+        "x0": 4.0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15004
+    }
+  ]
+}

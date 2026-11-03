@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "id": "tutorial_perfiles",
+  "name": "Ejemplo guiado · funciones por agente",
+  "description": "Seguimiento de gradiente con dos familias de costes locales. Usa una red completa; las reglas compartidas llaman al coste y gradiente del perfil de cada agente.",
+  "mode": "sync",
+  "parameters": [
+    {
+      "key": "alpha",
+      "label": "Paso del gradiente (alpha)",
+      "type": "number",
+      "default": 0.05,
+      "min": 1e-06
+    }
+  ],
+  "fields": [
+    {
+      "key": "centro",
+      "label": "Centro del costo local",
+      "type": "number",
+      "default": 2
+    },
+    {
+      "key": "inicio",
+      "label": "Valor inicial de x",
+      "type": "number",
+      "default": 0
+    },
+    {
+      "key": "beta",
+      "label": "Coeficiente de cuarto grado (solo ese perfil)",
+      "type": "number",
+      "default": 0.01,
+      "min": 0
+    }
+  ],
+  "functions": [],
+  "states": [
+    {
+      "name": "x",
+      "label": "Decisión local x",
+      "kind": "next",
+      "initial": "inicio",
+      "update": "(x + sum_neighbors(\"x\"))/n - alpha*y",
+      "lower": "",
+      "upper": ""
+    },
+    {
+      "name": "y",
+      "label": "Seguimiento del gradiente y",
+      "kind": "next",
+      "initial": "gradiente(x)",
+      "update": "(y + sum_neighbors(\"y\"))/n + gradiente(next_x) - gradiente(x)",
+      "lower": "",
+      "upper": ""
+    }
+  ],
+  "coordinator": [],
+  "observations": [
+    {
+      "name": "costo_local",
+      "label": "Costo local",
+      "expression": "costo(x)"
+    },
+    {
+      "name": "gradiente_local",
+      "label": "Gradiente local",
+      "expression": "gradiente(x)"
+    }
+  ],
+  "global_metrics": [
+    {
+      "name": "separacion",
+      "label": "Separación entre decisiones",
+      "expression": "max_all(\"x\") - min_all(\"x\")"
+    },
+    {
+      "name": "suma_costos",
+      "label": "Suma de costos locales",
+      "expression": "sum_all(\"costo(x)\")"
+    }
+  ],
+  "checks": [],
+  "criterion": "",
+  "integration_step": "0.01",
+  "function_profiles": [
+    {
+      "id": "cuadratico",
+      "name": "Cuadrático",
+      "functions": [
+        {
+          "name": "costo",
+          "args": [
+            "z"
+          ],
+          "expression": "0.5*(z-centro)**2"
+        },
+        {
+          "name": "gradiente",
+          "args": [
+            "z"
+          ],
+          "expression": "z-centro"
+        }
+      ]
+    },
+    {
+      "id": "cuarto_grado",
+      "name": "Cuadrático + cuarto grado",
+      "functions": [
+        {
+          "name": "costo",
+          "args": [
+            "z"
+          ],
+          "expression": "0.5*(z-centro)**2 + beta*(z-centro)**4"
+        },
+        {
+          "name": "gradiente",
+          "args": [
+            "z"
+          ],
+          "expression": "z-centro + 4*beta*(z-centro)**3"
+        }
+      ]
+    }
+  ],
+  "default_profile": "cuadratico"
+}

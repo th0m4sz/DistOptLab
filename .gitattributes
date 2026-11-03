@@ -1,0 +1,6 @@
+# Preservar los bytes Python: los ejemplos identifican algoritmos por SHA-256.
+* text=auto
+*.py -text
+*.json text eol=lf
+*.md text eol=lf
+*.cmd text eol=crlf

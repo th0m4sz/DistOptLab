@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "algorithm": "tutorial_perfiles",
+  "plugin_sha256": "c6b4bb992f76488ea264e4639cebfbcb7ea9b1d5851ae1f129ebcc77c96b6dbf",
+  "name": "Tutorial · cuatro agentes y dos perfiles",
+  "steps": 200,
+  "period_s": 0.01,
+  "parameters": {
+    "alpha": 0.05
+  },
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "topology": "completa",
+  "execution_target": "local",
+  "source": "Ejemplo público incluido con la plataforma.",
+  "nodes": [
+    {
+      "id": 1,
+      "params": {
+        "centro": 1,
+        "inicio": 0,
+        "beta": 0.01
+      },
+      "function_profile": "cuadratico",
+      "host": "127.0.0.1",
+      "port": 15001
+    },
+    {
+      "id": 2,
+      "params": {
+        "centro": 3,
+        "inicio": 0,
+        "beta": 0.01
+      },
+      "function_profile": "cuarto_grado",
+      "host": "127.0.0.1",
+      "port": 15002
+    },
+    {
+      "id": 3,
+      "params": {
+        "centro": 5,
+        "inicio": 0,
+        "beta": 0.01
+      },
+      "function_profile": "cuadratico",
+      "host": "127.0.0.1",
+      "port": 15003
+    },
+    {
+      "id": 4,
+      "params": {
+        "centro": 7,
+        "inicio": 0,
+        "beta": 0.01
+      },
+      "function_profile": "cuarto_grado",
+      "host": "127.0.0.1",
+      "port": 15004
+    }
+  ]
+}

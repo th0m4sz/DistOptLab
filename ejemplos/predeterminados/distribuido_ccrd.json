@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "algorithm": "distribuido_ccrd",
+  "plugin_sha256": "e421ba1f6738b1bf53157cb0f8ad3b247d8daf108a6be03572a1c9537e0c4d67",
+  "name": "RDCF · dinámica de replicadores con factores de capacidad · 4 agentes",
+  "steps": 1500,
+  "period_s": 0.0,
+  "parameters": {
+    "alpha": 5e-11,
+    "B": 3000,
+    "demanda": 800
+  },
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "topology": "anillo",
+  "execution_mode": "async",
+  "execution_target": "local",
+  "source": "Ejemplo público incluido con la plataforma.",
+  "nodes": [
+    {
+      "id": 1,
+      "params": {
+        "pmin": 100,
+        "pmax": 500,
+        "x0": 150,
+        "a": 64.67,
+        "b": 795.5,
+        "c": 1.15
+      },
+      "host": "127.0.0.1",
+      "port": 15001
+    },
+    {
+      "id": 2,
+      "params": {
+        "pmin": 82.0,
+        "pmax": 362.0,
+        "x0": 300.0,
+        "a": 64.46,
+        "b": 1448.6,
+        "c": 0.82
+      },
+      "host": "127.0.0.1",
+      "port": 15002
+    },
+    {
+      "id": 3,
+      "params": {
+        "pmin": 65.0,
+        "pmax": 315.0,
+        "x0": 100.0,
+        "a": 190.92,
+        "b": 838.1,
+        "c": 1.53
+      },
+      "host": "127.0.0.1",
+      "port": 15003
+    },
+    {
+      "id": 4,
+      "params": {
+        "pmin": 50.0,
+        "pmax": 271.0,
+        "x0": 250.0,
+        "a": 39.19,
+        "b": 696.1,
+        "c": 2.46
+      },
+      "host": "127.0.0.1",
+      "port": 15004
+    }
+  ]
+}

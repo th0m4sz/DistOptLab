@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "algorithm": "consenso_robusto",
+  "plugin_sha256": "49b4a0a280fc73dfaf99002dc01b5a1b5dd6963c7ff19933184f06d3a7c78733",
+  "name": "01_BASELINE/ROBUST_CONSENSUS/RING/ASYNCHRONOUS",
+  "steps": 2000,
+  "period_s": 0.001,
+  "parameters": {
+    "h": 0.01,
+    "reference_step": -1,
+    "kick_step": -1
+  },
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      1,
+      6
+    ]
+  ],
+  "topology": "anillo",
+  "execution_mode": "async",
+  "execution_target": "local",
+  "source": "Ejemplo público incluido con la plataforma.",
+  "nodes": [
+    {
+      "id": 1,
+      "params": {
+        "r": 1,
+        "r_after": 1,
+        "x0": 0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15001
+    },
+    {
+      "id": 2,
+      "params": {
+        "r": 3,
+        "r_after": 3,
+        "x0": 0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15002
+    },
+    {
+      "id": 3,
+      "params": {
+        "r": 5,
+        "r_after": 5,
+        "x0": 0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15003
+    },
+    {
+      "id": 4,
+      "params": {
+        "r": 7,
+        "r_after": 7,
+        "x0": 0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15004
+    },
+    {
+      "id": 5,
+      "params": {
+        "r": 9,
+        "r_after": 9,
+        "x0": 0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15005
+    },
+    {
+      "id": 6,
+      "params": {
+        "r": 11,
+        "r_after": 11,
+        "x0": 0,
+        "lambda0": 0,
+        "kick": 0
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      },
+      "host": "127.0.0.1",
+      "port": 15006
+    }
+  ]
+}

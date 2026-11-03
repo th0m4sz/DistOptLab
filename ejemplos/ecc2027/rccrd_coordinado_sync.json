@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "algorithm": "rccrd_coordinado",
+  "plugin_sha256": "c6636c6077ca7667ff3efeb60aecdab318490ca162ec45a36235678c0f960d56",
+  "name": "ECC2027 pilot rccrd_coordinado sync p=0.001",
+  "steps": 2000,
+  "period_s": 0.001,
+  "parameters": {
+    "robust": 1,
+    "h": 1e-06,
+    "demand_kw": 1150,
+    "B": 3000
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "host": "127.0.0.1",
+      "port": 15001,
+      "params": {
+        "a": 64.67,
+        "b": 795.5,
+        "c": 1.15,
+        "pmin": 100,
+        "pmax": 500,
+        "x0": 300
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      }
+    },
+    {
+      "id": 2,
+      "host": "127.0.0.1",
+      "port": 15002,
+      "params": {
+        "a": 65.46,
+        "b": 1448.6,
+        "c": 0.82,
+        "pmin": 82,
+        "pmax": 362,
+        "x0": 200
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      }
+    },
+    {
+      "id": 3,
+      "host": "127.0.0.1",
+      "port": 15003,
+      "params": {
+        "a": 190.92,
+        "b": 838.1,
+        "c": 1.53,
+        "pmin": 65,
+        "pmax": 315,
+        "x0": 200
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      }
+    },
+    {
+      "id": 4,
+      "host": "127.0.0.1",
+      "port": 15004,
+      "params": {
+        "a": 39.19,
+        "b": 696.1,
+        "c": 2.46,
+        "pmin": 50,
+        "pmax": 271,
+        "x0": 180
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      }
+    },
+    {
+      "id": 5,
+      "host": "127.0.0.1",
+      "port": 15005,
+      "params": {
+        "a": 104.44,
+        "b": 1150.5,
+        "c": 0,
+        "pmin": 0,
+        "pmax": 60,
+        "x0": 30
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      }
+    },
+    {
+      "id": 6,
+      "host": "127.0.0.1",
+      "port": 15006,
+      "params": {
+        "a": 28.77,
+        "b": 903.2,
+        "c": 0.71,
+        "pmin": 20,
+        "pmax": 260,
+        "x0": 240
+      },
+      "timing": {
+        "period_factor": 1,
+        "send_delay_ms": 0
+      }
+    }
+  ],
+  "topology": "coordinador",
+  "edges": [],
+  "source": "Valores iniciales declarados en el archivo cargado.",
+  "execution_target": "local",
+  "execution_mode": "coordinator",
+  "coordinator_exchange": "sync"
+}

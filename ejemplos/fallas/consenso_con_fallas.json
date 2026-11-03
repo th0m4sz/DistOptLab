@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "algorithm": "consenso_robusto",
+  "plugin_sha256": "49b4a0a280fc73dfaf99002dc01b5a1b5dd6963c7ff19933184f06d3a7c78733",
+  "name": "Ejemplo de falla y regreso · consenso robusto",
+  "steps": 600,
+  "period_s": 0.002,
+  "parameters": {
+    "h": 0.01,
+    "reference_step": -1,
+    "kick_step": -1
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "host": "127.0.0.1",
+      "port": 15001,
+      "params": {
+        "r": 1,
+        "r_after": 1,
+        "x0": 1.0,
+        "lambda0": 0,
+        "kick": 0
+      }
+    },
+    {
+      "id": 2,
+      "host": "127.0.0.1",
+      "port": 15002,
+      "params": {
+        "r": 4,
+        "r_after": 4,
+        "x0": 2.0,
+        "lambda0": 0,
+        "kick": 0
+      }
+    },
+    {
+      "id": 3,
+      "host": "127.0.0.1",
+      "port": 15003,
+      "params": {
+        "r": 9,
+        "r_after": 9,
+        "x0": 3.0,
+        "lambda0": 0,
+        "kick": 0
+      }
+    },
+    {
+      "id": 4,
+      "host": "127.0.0.1",
+      "port": 15004,
+      "params": {
+        "r": 16,
+        "r_after": 16,
+        "x0": 4.0,
+        "lambda0": 0,
+        "kick": 0
+      }
+    }
+  ],
+  "topology": "anillo",
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "source": "Valores iniciales declarados en el archivo cargado.",
+  "execution_mode": "sync",
+  "execution_target": "local",
+  "faults": {
+    "version": 2,
+    "state_policy": "keep",
+    "events": [
+      {
+        "target": "agent",
+        "nodes": [
+          4
+        ],
+        "start": 200,
+        "end": 400
+      }
+    ]
+  }
+}

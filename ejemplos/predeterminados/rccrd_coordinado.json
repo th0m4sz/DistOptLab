@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "algorithm": "rccrd_coordinado",
+  "plugin_sha256": "c6636c6077ca7667ff3efeb60aecdab318490ca162ec45a36235678c0f960d56",
+  "name": "RCCRD coordinado · 4 agentes",
+  "steps": 1000,
+  "period_s": 0.0,
+  "parameters": {
+    "robust": 1,
+    "h": 1e-06,
+    "demand_kw": 800,
+    "B": 3000
+  },
+  "edges": [],
+  "topology": "coordinador",
+  "execution_mode": "coordinator",
+  "execution_target": "local",
+  "source": "Ejemplo público incluido con la plataforma.",
+  "nodes": [
+    {
+      "id": 1,
+      "params": {
+        "pmin": 100,
+        "pmax": 500,
+        "a": 64.67,
+        "b": 795.5,
+        "c": 1.15,
+        "x0": 150
+      },
+      "host": "127.0.0.1",
+      "port": 15001
+    },
+    {
+      "id": 2,
+      "params": {
+        "pmin": 82.0,
+        "pmax": 362.0,
+        "a": 65.46,
+        "b": 1448.0,
+        "c": 0.82,
+        "x0": 300.0
+      },
+      "host": "127.0.0.1",
+      "port": 15002
+    },
+    {
+      "id": 3,
+      "params": {
+        "pmin": 65.0,
+        "pmax": 315.0,
+        "a": 190.0,
+        "b": 838.0,
+        "c": 1.53,
+        "x0": 150
+      },
+      "host": "127.0.0.1",
+      "port": 15003
+    },
+    {
+      "id": 4,
+      "params": {
+        "pmin": 50.0,
+        "pmax": 271.0,
+        "a": 39.0,
+        "b": 696.0,
+        "c": 2.46,
+        "x0": 150
+      },
+      "host": "127.0.0.1",
+      "port": 15004
+    }
+  ]
+}
